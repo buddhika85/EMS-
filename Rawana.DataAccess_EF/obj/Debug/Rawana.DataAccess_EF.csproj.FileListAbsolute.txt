@@ -1,0 +1,12 @@
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\bin\Debug\Rawana.DataAccess_EF.dll.config
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\bin\Debug\Rawana.DataAccess_EF.dll
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\bin\Debug\Rawana.DataAccess_EF.pdb
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\bin\Debug\EntityFramework.dll
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\bin\Debug\EntityFramework.xml
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\obj\Debug\Rawana.DataAccess_EF.csprojAssemblyReference.cache
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\obj\Debug\Rawana.DataAccess_EF.csproj.CoreCompileInputs.cache
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\obj\Debug\Rawana.DataAccess_EF.csproj.CopyComplete
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\obj\Debug\Rawana.DataAccess_EF.dll
+D:\Projects_Mine\ems_Rawana\Rawana.DataAccess_EF\obj\Debug\Rawana.DataAccess_EF.pdb

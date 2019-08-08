@@ -1,0 +1,17 @@
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.Services.dll
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.Services.pdb
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_EF.dll
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_GR_UOW.dll
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.ViewModels.dll
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\EntityFramework.dll
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_EF.pdb
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_EF.dll.config
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_GR_UOW.pdb
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_GR_UOW.dll.config
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.ViewModels.pdb
+D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\EntityFramework.xml
+D:\Projects_Mine\ems_Rawana\Rawana.Services\obj\Debug\Rawana.Services.csprojAssemblyReference.cache
+D:\Projects_Mine\ems_Rawana\Rawana.Services\obj\Debug\Rawana.Services.csproj.CoreCompileInputs.cache
+D:\Projects_Mine\ems_Rawana\Rawana.Services\obj\Debug\Rawana.Services.csproj.CopyComplete
+D:\Projects_Mine\ems_Rawana\Rawana.Services\obj\Debug\Rawana.Services.dll
+D:\Projects_Mine\ems_Rawana\Rawana.Services\obj\Debug\Rawana.Services.pdb
