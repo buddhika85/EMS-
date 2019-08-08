@@ -51,11 +51,14 @@ namespace Rawana.DataAccess_GR_UOW
         public virtual void Delete(object primaryKey)
         {
             TEntity entityToDel = dbSet.Find(primaryKey);
-            if (_context.Entry(entityToDel).State == EntityState.Detached)
+            if (entityToDel != null)
             {
-                dbSet.Attach(entityToDel);
+                if (_context.Entry(entityToDel).State == EntityState.Detached)
+                {
+                    dbSet.Attach(entityToDel);
+                }
+                dbSet.Remove(entityToDel);
             }
-            dbSet.Remove(entityToDel);
         }
         #endregion CRUD
 
@@ -69,7 +72,7 @@ namespace Rawana.DataAccess_GR_UOW
         // Executing a stored procedure
         // Ref - http://stackoverflow.com/questions/27974080/using-generic-repository-and-stored-procedures
         // Ref - http://www.codedisqus.com/0HieUqXkUj/how-can-i-use-a-stored-procedure-repository-unit-of-work-patterns-in-entity-framework.html
-        public DbRawSqlQuery<TEntity> SQLQuery<TEntity>(string sql, params object[] parameters)
+        public DbRawSqlQuery<TEntity> SqlQuery(string sql, params object[] parameters)
         {
             if (parameters != null)
             {
