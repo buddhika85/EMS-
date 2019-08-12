@@ -1,25 +1,17 @@
-﻿using System;
+﻿using Rawana.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Rawana.DataAccess_GR_UOW;
-using Rawana.ViewModels;
 
 namespace Rawana.Services.BusinessLogic.Employee
 {
-    public class EmployeeBusinessLogic : CoreBusinessLogic, IEmployeeBusinessLogic
+    public class EmployeeBusinessLogic : CoreBusinessLogic<DataAccess_EF.Employee>, IEmployeeBusinessLogic
     {
-        public GenericRepository<DataAccess_EF.Employee> EmployeeRepository { get; set; }
-
-        public EmployeeBusinessLogic()
-        {
-            EmployeeRepository = UnitOfWork.EmployeeRepository;
-        }
-
         public List<EmployeeViewModel> GetAllEmployees()
         {
             try
             {
-                var employees = EmployeeRepository.GetAll().Select(ConvertToViewModel).ToList();
+                var employees = Repository.GetAll().Select(ConvertToViewModel).ToList();
                 return employees;
             }
             catch (Exception e)
@@ -35,7 +27,7 @@ namespace Rawana.Services.BusinessLogic.Employee
         {
             try
             {
-                var employee = ConvertToViewModel(EmployeeRepository.GetByPrimaryKey(id));
+                var employee = ConvertToViewModel(Repository.GetByPrimaryKey(id));
                 return employee;
             }
             catch (Exception e)

@@ -17,17 +17,16 @@ namespace Rawana.API.Controllers
 
         [HttpGet]
         [Route("GetAllEmployees")]
-        public List<EmployeeViewModel> GetAllEmployees()
+        public IHttpActionResult GetAllEmployees()
         {
             try
             {
                 var employees = EmployeeBusinessLogic.GetAllEmployees();
-                return employees;
+                return Ok(employees);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                return InternalServerError(e);
             }
         }
     }
