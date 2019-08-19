@@ -1,7 +1,5 @@
 ﻿using Rawana.Services.BusinessLogic.Employee;
-using Rawana.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Web.Http;
 
 namespace Rawana.API.Controllers
