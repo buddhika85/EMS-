@@ -17,9 +17,9 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     AppComponent,
     WelcomeComponent,
     EmployeeListComponent,
-    EmployeeDetailComponent,
+    EmployeeDetailComponent
     
-  
+   
   ],
   imports: [
     BrowserModule,

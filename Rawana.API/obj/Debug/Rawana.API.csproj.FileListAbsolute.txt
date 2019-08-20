@@ -125,3 +125,6 @@ D:\Projects_Mine\ems_Rawana\Rawana.API\bin\Rawana.DataAccess_GR_UOW.pdb
 D:\Projects_Mine\ems_Rawana\Rawana.API\bin\Rawana.DataAccess_GR_UOW.dll.config
 D:\Projects_Mine\ems_Rawana\Rawana.API\bin\Rawana.DataAccess_EF.pdb
 D:\Projects_Mine\ems_Rawana\Rawana.API\bin\Rawana.DataAccess_EF.dll.config
+D:\Projects_Mine\ems_Rawana\Rawana.API\bin\System.Web.Cors.dll
+D:\Projects_Mine\ems_Rawana\Rawana.API\bin\System.Web.Http.Cors.dll
+D:\Projects_Mine\ems_Rawana\Rawana.API\bin\System.Web.Http.Cors.xml

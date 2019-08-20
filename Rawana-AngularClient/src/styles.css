@@ -2,3 +2,10 @@
 
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
+
+
+.spacerDiv-verticle
+{
+    padding-top: 1%; 
+    padding-bottom: 1%; 
+}

@@ -23,12 +23,36 @@ namespace Rawana.Services.BusinessLogic.Employee
 
         
 
-        public EmployeeViewModel GetById(int id)
+        public EmployeeViewModel GetByEmployeeById(int id)
         {
             try
             {
                 var employee = ConvertToViewModel(Repository.GetByPrimaryKey(id));
                 return employee;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public List<EmployeeViewModel> SearchEmployees(string searchString)
+        {
+            try
+            {
+                searchString = string.IsNullOrWhiteSpace(searchString) ? searchString : searchString.ToLower();
+
+                var employees = Repository.GetAll().
+                    Where(x => string.IsNullOrWhiteSpace(searchString) ||
+                                (!string.IsNullOrWhiteSpace(x.FirstName) && x.FirstName.ToLower().Contains(searchString)) ||
+                                (!string.IsNullOrWhiteSpace(x.LastName) && x.LastName.ToLower().Contains(searchString)) ||
+                                (!string.IsNullOrWhiteSpace(x.Position?.Description) && x.Position.Description.ToLower().Contains(searchString)) ||
+                                (!string.IsNullOrWhiteSpace(x.Department?.Name) && x.Department.Name.ToLower().Contains(searchString)) ||
+                                (!string.IsNullOrWhiteSpace(x.Employee2?.FirstName) && x.Employee2.FirstName.ToLower().Contains(searchString)) ||
+                                (!string.IsNullOrWhiteSpace(x.Employee2?.LastName)) && x.Employee2.LastName.ToLower().Contains(searchString))
+                    .Select(ConvertToViewModel).ToList();
+                return employees;
             }
             catch (Exception e)
             {
@@ -46,8 +70,6 @@ namespace Rawana.Services.BusinessLogic.Employee
         {
             throw new System.NotImplementedException();
         }
-
-
 
         private EmployeeViewModel ConvertToViewModel(DataAccess_EF.Employee model)
         {

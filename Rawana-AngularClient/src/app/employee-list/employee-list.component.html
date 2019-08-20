@@ -1,3 +1,47 @@
-<p>
-  employee-list works!
-</p>
+
+
+<h4>Employees</h4>
+
+<div class='spacerDiv-verticle'></div>
+
+<div class='row'>
+  <label class='col-md-1'>Search By : </label>
+  <input type='text' class='col-md-2 form-control' [(ngModel)]="searchEmployeeString"/>
+</div>
+
+<div class='spacerDiv-verticle'></div>
+
+<div class="table-responsive">
+  <table class="table">    
+    <thead class="thead">
+      <tr class="table-info">
+        <th scope="col">ID</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Joined</th>
+        <th scope="col">Permenent</th>
+        <th scope="col">Job Title</th>
+        <th scope="col">Manager</th>
+        <th scope="col">Department</th>
+        
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of filteredEmployees">        
+        <td>{{employee.Id}}</td>
+        <td>{{employee.FirstName}}</td>
+        <td>{{employee.LastName}}</td>
+        <td>{{employee.JoinedDateString}}</td>
+        <td>{{employee.IsPermenentString}}</td>
+        <td>{{employee.JobTitle}}</td>
+        <td>{{employee.ManagerName}}</td>
+        <td>{{employee.DepartmentName}}</td>
+        <td>
+          <button>Edit</button> 
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>

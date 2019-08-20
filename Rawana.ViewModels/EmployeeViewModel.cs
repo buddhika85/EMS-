@@ -9,6 +9,7 @@ namespace Rawana.ViewModels
         public string LastName { get; set; }
         public DateTime JoinedDateTime { get; set; }
         public bool IsPermenent { get; set; }
+        
         public bool IsFullTime { get; set; }
         public decimal Salary { get; set; }
         public bool IsActive { get; set; }
@@ -19,5 +20,8 @@ namespace Rawana.ViewModels
         public string ManagerName { get; set; }
         public string DepartmentName { get; set; }
         public string JobTitle { get; set; }
+        public string IsPermenentString => IsPermenent ? "Yes" : "No";
+        public string IsFullTimeString => IsFullTime ? "Yes" : "No";
+        public string JoinedDateString => JoinedDateTime.ToShortDateString();
     }
 }

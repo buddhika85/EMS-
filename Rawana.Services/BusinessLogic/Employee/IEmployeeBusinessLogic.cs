@@ -7,10 +7,11 @@ namespace Rawana.Services.BusinessLogic.Employee
     {
         List<EmployeeViewModel> GetAllEmployees();
 
-        EmployeeViewModel GetById(int id);
+        EmployeeViewModel GetByEmployeeById(int id);
 
         EmployeeViewModel SaveEmployee(EmployeeViewModel employeeViewModel);
 
         bool DeactivateEmployee(int id);
+        List<EmployeeViewModel> SearchEmployees(string searchString);
     }
 }
