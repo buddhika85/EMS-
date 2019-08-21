@@ -38,7 +38,7 @@
         <td>{{employee.ManagerName}}</td>
         <td>{{employee.DepartmentName}}</td>
         <td>
-          <button (click)="editEmployee(employee.Id)">Edit</button> 
+          <button [routerLink]="['/employee', employee.Id]">Edit</button> 
         </td>
       </tr>
      

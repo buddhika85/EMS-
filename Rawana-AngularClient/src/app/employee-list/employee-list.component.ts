@@ -46,9 +46,4 @@ export class EmployeeListComponent implements OnInit {
       );
   }
 
-  editEmployee(employeeId : number) : void
-  {
-    //debugger
-    console.log(`Edit employee - ${employeeId}`)
-  }
 }
