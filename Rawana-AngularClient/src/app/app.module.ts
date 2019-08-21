@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 
 
 
@@ -17,7 +18,8 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     AppComponent,
     WelcomeComponent,
     EmployeeListComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    EmployeeEditComponent
     
    
   ],
@@ -27,7 +29,8 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     HttpClientModule,
     RouterModule.forRoot([
       {path : 'employees', component: EmployeeListComponent},
-      {path : 'employee/:id', component: EmployeeDetailComponent},
+      {path : 'employee-details/:id', component: EmployeeDetailComponent},
+      {path : 'employee/:id', component: EmployeeEditComponent},
       {path : 'welcome', component: WelcomeComponent},
       {path : '', redirectTo : 'welcome', pathMatch : 'full'},
       {path : '**', redirectTo : 'welcome', pathMatch : 'full'}

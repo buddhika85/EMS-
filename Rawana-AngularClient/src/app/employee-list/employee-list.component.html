@@ -16,8 +16,7 @@
     <thead class="thead">
       <tr class="table-info">
         <th scope="col">ID</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
+        <th scope="col">Full Name</th>
         <th scope="col">Joined</th>
         <th scope="col">Permenent</th>
         <th scope="col">Job Title</th>
@@ -30,8 +29,9 @@
     <tbody>
       <tr *ngFor="let employee of filteredEmployees">        
         <td>{{employee.Id}}</td>
-        <td>{{employee.FirstName}}</td>
-        <td>{{employee.LastName}}</td>
+        <td>
+          <a [routerLink]="['/employee-details', employee.Id]">{{employee.FullName}}</a>
+        </td>        
         <td>{{employee.JoinedDateString}}</td>
         <td>{{employee.IsPermenentString}}</td>
         <td>{{employee.JobTitle}}</td>

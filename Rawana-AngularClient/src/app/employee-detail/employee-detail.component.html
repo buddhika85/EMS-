@@ -1,3 +1,41 @@
-<p>
-  employee-detail works!
-</p>
+
+<div class="card" *ngIf="this.employee">
+    <h5 class="card-header">Details - {{employee.FullName}}</h5>
+    <div class="card-body">
+        <div class="row">
+
+              <div class="col-md-2">
+                <h6 class="card-title">First Name</h6>
+                <p class="card-text">{{employee.FirstName}}</p>
+              </div>
+
+              <div class="col-md-2">
+                  <h6 class="card-title">Last Name</h6>
+                  <p class="card-text">{{employee.LastName | uppercase}}</p>
+              </div>
+
+              <div class="col-md-2">
+                  <h6 class="card-title">Position</h6>
+                  <p class="card-text">{{employee.JobTitle}}</p>
+              </div>
+
+              <div class="col-md-2">
+                  <h6 class="card-title">Manager</h6>
+                  <p class="card-text">{{employee.ManagerName}}</p>
+              </div>
+
+              <div class="col-md-2">
+                  <h6 class="card-title">Joined On</h6>
+                  <p class="card-text">{{employee.JoinedDateString}}</p>
+              </div>
+              
+              <div class="col-md-2">
+                  <h6 class="card-title">Salary</h6>
+                  <p class="card-text">{{employee.Salary | currency}}</p>
+              </div>
+        </div>
+      
+      <br />
+      <a [routerLink]="['/employees']">Back to List</a>
+    </div>
+  </div>

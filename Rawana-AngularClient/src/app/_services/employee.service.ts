@@ -38,7 +38,9 @@ export class EmployeeService {
     const params = new HttpParams().set('employeeId', id.toString());
 
     return this.http.get<IEmployee>(searchQueryString, {params}).pipe(
-      tap(data => console.log('Product: ' + JSON.stringify(data))),
+      tap(data => {
+        //console.log('Product: ' + JSON.stringify(data));
+      }),
       catchError(this.handleError)
     );
   }

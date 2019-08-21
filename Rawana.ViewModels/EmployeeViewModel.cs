@@ -23,5 +23,7 @@ namespace Rawana.ViewModels
         public string IsPermenentString => IsPermenent ? "Yes" : "No";
         public string IsFullTimeString => IsFullTime ? "Yes" : "No";
         public string JoinedDateString => JoinedDateTime.ToShortDateString();
+
+        public string FullName => $"{FirstName} {LastName}";
     }
 }

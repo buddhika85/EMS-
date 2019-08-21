@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { EmployeeService } from '../_services/employee.service';
+import { ActivatedRoute } from '@angular/router';
 import { IEmployee } from '../_models/IEmployee';
 
 @Component({
-  selector: 'app-employee-detail',
-  templateUrl: './employee-detail.component.html',
-  styleUrls: ['./employee-detail.component.css']
+  selector: 'app-employee-edit',
+  templateUrl: './employee-edit.component.html',
+  styleUrls: ['./employee-edit.component.css']
 })
-export class EmployeeDetailComponent implements OnInit {
+export class EmployeeEditComponent implements OnInit {
 
   emplopyeeId : number;
   employee : IEmployee;
   pageTitle : string;
   errorMessage : string;
-  
+
   constructor(private route: ActivatedRoute, private employeeService : EmployeeService) { }
 
   ngOnInit() 
@@ -24,7 +24,7 @@ export class EmployeeDetailComponent implements OnInit {
 
       result => {
         this.employee = result;
-        this.pageTitle =  `Details - ${this.employee.FullName} - ${this.employee.Id}`;
+        this.pageTitle =  `Edit - ${this.employee.FullName} - ${this.employee.Id}`;
         this.errorMessage = '';
       },
       error => {
