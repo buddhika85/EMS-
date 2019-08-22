@@ -46,4 +46,8 @@ export class EmployeeListComponent implements OnInit {
       );
   }
 
+  updateActiveStatus(id : number) : void
+  {
+
+  }
 }

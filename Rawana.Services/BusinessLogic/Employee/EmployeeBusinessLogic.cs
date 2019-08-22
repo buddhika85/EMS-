@@ -61,6 +61,26 @@ namespace Rawana.Services.BusinessLogic.Employee
             }
         }
 
+        public EmployeeViewModel UpdateEmployeeStatus(int employeeId)
+        {
+            try
+            {
+                var employee = Repository.GetByPrimaryKey(employeeId);
+                if (employee == null)
+                    return null;
+
+                employee.IsActive = !employee.IsFullTime;
+                Repository.Update(employee);
+
+                return ConvertToViewModel(employee);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         public EmployeeViewModel SaveEmployee(EmployeeViewModel employeeViewModel)
         {
             throw new System.NotImplementedException();

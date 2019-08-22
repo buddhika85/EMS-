@@ -22,8 +22,11 @@
         <th scope="col">Job Title</th>
         <th scope="col">Manager</th>
         <th scope="col">Department</th>
-        
-        <th scope="col">Edit</th>
+        <th scope="col">Active</th>
+        <th scope="col">Contractor</th>
+
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -37,8 +40,27 @@
         <td>{{employee.JobTitle}}</td>
         <td>{{employee.ManagerName}}</td>
         <td>{{employee.DepartmentName}}</td>
+        <td>{{employee.IsActive | convertBooleanToString : null}}</td>
+        <td>{{employee.IsFullTime | convertBooleanToString : ['Full', 'Contact']}}</td>
         <td>
-          <button [routerLink]="['/employee', employee.Id]">Edit</button> 
+          <button [routerLink]="['/employee', employee.Id]" class='btn'>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button> 
+        </td>
+
+        <td>
+           <button class='btn btn-danger' *ngIf="employee.IsActive" (click)='updateActiveStatus(employee.Id)'>
+              <div>
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                  Deactivate
+              </div>
+           </button>
+
+           <button class='btn bg-warning' *ngIf="!employee.IsActive" (click)='updateActiveStatus(employee.Id)'>
+              <div>
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                  Activate
+              </div>
+           </button>
         </td>
       </tr>
      

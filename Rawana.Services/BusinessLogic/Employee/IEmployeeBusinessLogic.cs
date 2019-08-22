@@ -13,5 +13,6 @@ namespace Rawana.Services.BusinessLogic.Employee
 
         bool DeactivateEmployee(int id);
         List<EmployeeViewModel> SearchEmployees(string searchString);
+        EmployeeViewModel UpdateEmployeeStatus(int employeeId);
     }
 }

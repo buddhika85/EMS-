@@ -62,5 +62,21 @@ namespace Rawana.API.Controllers
                 return InternalServerError(e);
             }
         }
+
+
+        [HttpPut]
+        [Route("UpdateEmployeeStatus")]
+        public IHttpActionResult UpdateEmployeeStatus(int employeeId)
+        {
+            try
+            {
+                var employee = EmployeeBusinessLogic.UpdateEmployeeStatus(employeeId);
+                return Ok(employee);
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+        }
     }
 }

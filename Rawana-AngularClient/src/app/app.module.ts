@@ -10,6 +10,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
+import { ConvertBooleanToStringPipe } from './_pipes/convert-boolean-to-string.pipe';
 
 
 
@@ -19,7 +20,8 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
     WelcomeComponent,
     EmployeeListComponent,
     EmployeeDetailComponent,
-    EmployeeEditComponent
+    EmployeeEditComponent,
+    ConvertBooleanToStringPipe
     
    
   ],
