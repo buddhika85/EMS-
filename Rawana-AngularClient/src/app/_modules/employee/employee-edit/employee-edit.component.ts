@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../_services/employee.service';
+import { EmployeeService } from '../../../_services/employee.service';
 import { ActivatedRoute } from '@angular/router';
-import { IEmployee } from '../_models/IEmployee';
+import { IEmployee } from '../../../_models/IEmployee';
 
 @Component({
   selector: 'app-employee-edit',
