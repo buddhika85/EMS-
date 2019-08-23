@@ -7,7 +7,7 @@ export class ConvertBooleanToStringPipe implements PipeTransform {
 
   transform(input: boolean, strOptions?: string[]): any 
   {
-    debugger
+    //debugger
     if (strOptions == null)
     {
       strOptions = ["Yes", "No"];

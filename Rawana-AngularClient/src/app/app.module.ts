@@ -11,6 +11,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { ConvertBooleanToStringPipe } from './_pipes/convert-boolean-to-string.pipe';
+import { EmployeeDetailEditGuard } from './_guards/employee-detail-edit.guard';
 
 
 
@@ -31,7 +32,11 @@ import { ConvertBooleanToStringPipe } from './_pipes/convert-boolean-to-string.p
     HttpClientModule,
     RouterModule.forRoot([
       {path : 'employees', component: EmployeeListComponent},
-      {path : 'employee-details/:id', component: EmployeeDetailComponent},
+      { 
+        path : 'employee-details/:id', 
+        canActivate : [EmployeeDetailEditGuard],
+        component: EmployeeDetailComponent  
+      },
       {path : 'employee/:id', component: EmployeeEditComponent},
       {path : 'welcome', component: WelcomeComponent},
       {path : '', redirectTo : 'welcome', pathMatch : 'full'},
