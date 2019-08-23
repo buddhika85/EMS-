@@ -9,7 +9,7 @@ export class EmployeeDetailEditGuard implements CanActivate
 {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree 
   {
-    debugger
+    //debugger
     let employeeId = Number.parseInt(next.url[1].path);
     if (isNaN(employeeId) || employeeId <= 0)
     {

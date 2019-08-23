@@ -64,7 +64,7 @@ namespace Rawana.API.Controllers
         }
 
 
-        [HttpPut]
+        [HttpGet]
         [Route("UpdateEmployeeStatus")]
         public IHttpActionResult UpdateEmployeeStatus(int employeeId)
         {

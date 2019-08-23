@@ -1,6 +1,7 @@
+import { IBaseModel } from './IBaseModel';
 
-export class IEmployee
-{
+export interface IEmployee extends IBaseModel
+{    
     Id : number;
     FirstName :  string;
     LastName :  string;
@@ -19,5 +20,5 @@ export class IEmployee
     JobTitle : string;
     IsPermenentString : string;
     IsFullTimeString : string;
-    JoinedDateString : string;
+    JoinedDateString : string;    
 }

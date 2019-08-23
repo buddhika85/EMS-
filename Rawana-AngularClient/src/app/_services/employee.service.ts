@@ -34,10 +34,24 @@ export class EmployeeService {
 
   getEmployeeById(id : number) : Observable<IEmployee>
   {
-    let searchQueryString = this.employeeAPIUrl + '/GetEmployeeById';
+    let queryString = this.employeeAPIUrl + '/GetEmployeeById';
     const params = new HttpParams().set('employeeId', id.toString());
 
-    return this.http.get<IEmployee>(searchQueryString, {params}).pipe(
+    return this.http.get<IEmployee>(queryString, {params}).pipe(
+      tap(data => {
+        //console.log('Product: ' + JSON.stringify(data));
+      }),
+      catchError(this.handleError)
+    );
+  }
+
+  updateActiveStatus(id : number) : Observable<IEmployee>
+  {
+    //debugger
+    let queryString = this.employeeAPIUrl + '/UpdateEmployeeStatus';
+    const params = new HttpParams().set('employeeId', id.toString());
+
+    return this.http.get<IEmployee>(queryString, {params}).pipe(
       tap(data => {
         //console.log('Product: ' + JSON.stringify(data));
       }),

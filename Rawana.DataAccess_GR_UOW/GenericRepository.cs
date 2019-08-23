@@ -40,11 +40,23 @@ namespace Rawana.DataAccess_GR_UOW
             dbSet.Add(tentity);
         }
 
+        public virtual void InsertAndSave(TEntity tentity)
+        {
+            Insert(tentity);
+            _context.SaveChanges();
+        }
+
         // update
         public virtual void Update(TEntity tentity)
         {
             dbSet.Attach(tentity);
             _context.Entry(tentity).State = EntityState.Modified;
+        }
+
+        public virtual void UpdateAndSave(TEntity tentity)
+        {
+            Update(tentity);
+            _context.SaveChanges();
         }
 
         // delete
@@ -60,6 +72,14 @@ namespace Rawana.DataAccess_GR_UOW
                 dbSet.Remove(entityToDel);
             }
         }
+
+        public virtual void DeleteAndSave(object primaryKey)
+        {
+            Delete(primaryKey);
+            _context.SaveChanges();
+        }
+
+
         #endregion CRUD
 
         //// executing a stored procedure
@@ -83,5 +103,7 @@ namespace Rawana.DataAccess_GR_UOW
                 return _context.Database.SqlQuery<TEntity>(sql);
             }
         }
+
+       
     }
 }

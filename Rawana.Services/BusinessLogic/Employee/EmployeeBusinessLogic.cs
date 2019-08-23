@@ -2,11 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Rawana.DataAccess_GR_UOW;
 
 namespace Rawana.Services.BusinessLogic.Employee
 {
-    public class EmployeeBusinessLogic : CoreBusinessLogic<DataAccess_EF.Employee>, IEmployeeBusinessLogic
+    public class EmployeeBusinessLogic : CoreBusinessLogic, IEmployeeBusinessLogic
     {
+        public GenericRepository<DataAccess_EF.Employee> Repository { get; set; }
+
+        public EmployeeBusinessLogic()
+        {
+            Repository = UnitOfWork.EmployeeRepository;
+        }
+
+
         public List<EmployeeViewModel> GetAllEmployees()
         {
             try
@@ -69,8 +78,8 @@ namespace Rawana.Services.BusinessLogic.Employee
                 if (employee == null)
                     return null;
 
-                employee.IsActive = !employee.IsFullTime;
-                Repository.Update(employee);
+                employee.IsActive = !employee.IsActive;
+                Repository.UpdateAndSave(employee);
 
                 return ConvertToViewModel(employee);
             }

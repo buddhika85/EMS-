@@ -48,6 +48,24 @@ export class EmployeeListComponent implements OnInit {
 
   updateActiveStatus(id : number) : void
   {
-
+    this.employeeService.updateActiveStatus(id).subscribe(
+          
+      result => {        
+        //debugger    
+          if (result && result.IsSuccessful)  
+          {
+            this.searchEmployees();
+          }           
+          else
+          {
+            this.errorMessage =  'Error - updating employee status';
+            if (result)
+              this.errorMessage = `${this.errorMessage} of Employee Id - ${id}`;
+              
+            console.log(this.employeeService);
+          }
+        },
+        error => this.errorMessage = <any>error
+      );
   }
 }

@@ -13,8 +13,14 @@ namespace Rawana.DataAccess_GR_UOW
         private bool _disposed = false;
 
         #endregion PROPERTIES
+        private GenericRepository<Employee> _employeeRepository;
 
-        
+        public GenericRepository<Employee> EmployeeRepository => 
+            _employeeRepository ?? (_employeeRepository = new GenericRepository<Employee>(Context));
+
+        #region REPOSITORIES
+
+        #endregion
 
         // save and commit to the DB
         public void Save()
