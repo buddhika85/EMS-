@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 import { EmployeeModule } from './_modules/employee/employee.module';
+import { DepartmentModule } from './_modules/department/department.module';
 
 
 
@@ -16,6 +17,7 @@ import { EmployeeModule } from './_modules/employee/employee.module';
   imports: [
     
     EmployeeModule,    
+    DepartmentModule,
     RouterModule.forRoot([
       
       {path : 'welcome', component: WelcomeComponent},
