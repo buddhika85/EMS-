@@ -8,7 +8,6 @@ D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_EF.dll.c
 D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_GR_UOW.pdb
 D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.DataAccess_GR_UOW.dll.config
 D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\Rawana.ViewModels.pdb
-D:\Projects_Mine\ems_Rawana\Rawana.Services\bin\Debug\EntityFramework.xml
 D:\Projects_Mine\ems_Rawana\Rawana.Services\obj\Debug\Rawana.Services.csprojAssemblyReference.cache
 D:\Projects_Mine\ems_Rawana\Rawana.Services\obj\Debug\Rawana.Services.csproj.CoreCompileInputs.cache
 D:\Projects_Mine\ems_Rawana\Rawana.Services\obj\Debug\Rawana.Services.csproj.CopyComplete

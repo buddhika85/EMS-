@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\CoreBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\Department\DepartmentBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\Department\IDepartmentBusinessLogic.cs" />
     <Compile Include="BusinessLogic\Employee\EmployeeBusinessLogic.cs" />
     <Compile Include="BusinessLogic\Employee\IEmployeeBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

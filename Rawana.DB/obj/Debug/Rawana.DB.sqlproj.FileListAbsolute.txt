@@ -1,0 +1,9 @@
+D:\Projects_Mine\ems_Rawana\Rawana.DB\bin\Debug\Rawana.DB.dacpac
+D:\Projects_Mine\ems_Rawana\Rawana.DB\bin\Debug\Rawana.DB.dll
+D:\Projects_Mine\ems_Rawana\Rawana.DB\bin\Debug\Rawana.DB.pdb
+D:\Projects_Mine\ems_Rawana\Rawana.DB\obj\Debug\Model.xml
+D:\Projects_Mine\ems_Rawana\Rawana.DB\obj\Debug\refactor.xml
+D:\Projects_Mine\ems_Rawana\Rawana.DB\obj\Debug\postdeploy.sql
+D:\Projects_Mine\ems_Rawana\Rawana.DB\obj\Debug\predeploy.sql
+D:\Projects_Mine\ems_Rawana\Rawana.DB\obj\Debug\Rawana.DB.dll
+D:\Projects_Mine\ems_Rawana\Rawana.DB\obj\Debug\Rawana.DB.pdb
