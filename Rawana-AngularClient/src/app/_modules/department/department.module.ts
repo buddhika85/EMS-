@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { DepartmentListComponent } from '../department/department-list/department-list.component';
 import { DepartmentEditComponent } from '../department/department-edit/department-edit.component';
+import { DepartmentDetailEditGuard } from 'src/app/_guards/department-detail-edit.guard';
 
 
 @NgModule({
@@ -15,7 +16,11 @@ import { DepartmentEditComponent } from '../department/department-edit/departmen
   imports: [
     RouterModule.forChild([
       {path: 'departments', component:DepartmentListComponent},  
-      {path : 'department/:id', component: DepartmentEditComponent}    
+      {
+        path : 'department/:id', 
+        canActivate: [DepartmentDetailEditGuard],
+        component: DepartmentEditComponent
+      }    
     ]),
     SharedModule
   ]
