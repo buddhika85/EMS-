@@ -24,7 +24,7 @@ import { ConvertBooleanToStringPipe } from '../../_pipes/convert-boolean-to-stri
         { 
           path : 'employee-details/:id', 
           canActivate : [EmployeeDetailEditGuard],
-          component: EmployeeDetailComponent  
+          component: EmployeeDetailComponent
         },
         {path : 'employee/:id', component: EmployeeEditComponent}
       ]),
