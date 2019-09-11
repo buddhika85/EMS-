@@ -17,6 +17,7 @@ namespace Rawana.API.Controllers
             DepartmentBusinessLogic = new DepartmentBusinessLogic();
         }
 
+        [HttpGet]
         [Route("SearchDepartments")]
         public IHttpActionResult SearchDepartments(string searchString = null)
         {
@@ -31,7 +32,7 @@ namespace Rawana.API.Controllers
             }
         }
 
-
+        [HttpGet]
         [Route("GetDepartmentById")]
         public IHttpActionResult GetDepartmentById(int id)
         {

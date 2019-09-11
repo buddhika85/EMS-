@@ -3,3 +3,4 @@ D:\Projects_Mine\ems_Rawana\Rawana.ViewModels\bin\Debug\Rawana.ViewModels.pdb
 D:\Projects_Mine\ems_Rawana\Rawana.ViewModels\obj\Debug\Rawana.ViewModels.csproj.CoreCompileInputs.cache
 D:\Projects_Mine\ems_Rawana\Rawana.ViewModels\obj\Debug\Rawana.ViewModels.dll
 D:\Projects_Mine\ems_Rawana\Rawana.ViewModels\obj\Debug\Rawana.ViewModels.pdb
+D:\Projects_Mine\ems_Rawana\Rawana.ViewModels\obj\Debug\Rawana.ViewModels.csprojAssemblyReference.cache
