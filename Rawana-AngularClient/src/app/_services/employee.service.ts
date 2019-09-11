@@ -9,7 +9,7 @@ import { tap, catchError } from "rxjs/operators";
 })
 export class EmployeeService {
 
-  private employeeAPIUrl : string  = 'http://localhost:62435/api//employee';
+  private employeeAPIUrl : string  = 'http://localhost:62435//api//employee';
 
   constructor(private http : HttpClient) 
   {    

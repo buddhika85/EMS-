@@ -4,19 +4,18 @@ import { RouterModule } from '@angular/router';
 
 
 import { DepartmentListComponent } from '../department/department-list/department-list.component';
-import { DepartmentDetailComponent } from '../department/department-detail/department-detail.component';
 import { DepartmentEditComponent } from '../department/department-edit/department-edit.component';
 
 
 @NgModule({
   declarations: [
-     DepartmentListComponent,
-     DepartmentDetailComponent,
+     DepartmentListComponent,    
      DepartmentEditComponent
     ],
   imports: [
     RouterModule.forChild([
-      {path: 'departments', component:DepartmentListComponent},      
+      {path: 'departments', component:DepartmentListComponent},  
+      {path : 'department/:id', component: DepartmentEditComponent}    
     ]),
     SharedModule
   ]
