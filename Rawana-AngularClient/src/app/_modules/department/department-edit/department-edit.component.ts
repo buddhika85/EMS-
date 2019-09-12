@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IDepartment } from 'src/app/_models/IDepartment';
 import { DepartmentService } from 'src/app/_services/department.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-department-edit',
@@ -10,31 +10,43 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DepartmentEditComponent implements OnInit {
 
-  departmentId : number;
-  department : IDepartment;
+  departmentId : number;  
+  department : IDepartment = { Id : 0, Name : "", IsSuccessful : false, ErrorMessage : ''};
   errorMessage : string;
   pageTitle : string;
 
-  constructor(private route : ActivatedRoute, private departmentService : DepartmentService) 
-  {     
+  constructor(private route : ActivatedRoute, private departmentService : DepartmentService,
+    private router : Router) 
+  { 
   }
 
   ngOnInit() 
-  {
+  {    
     this.departmentId = Number.parseInt(this.route.snapshot.paramMap.get('id'));
-    this.departmentService.getDepartmentById(this.departmentId).subscribe(
+    this.errorMessage = '';
 
-      result => {
-        this.department = result;
-        this.pageTitle =  `Edit Department - ${this.department.Name} - ${this.department.Id}`;
-        this.errorMessage = '';
+    this.departmentService.getDepartmentById(this.departmentId).subscribe(    
+
+      result => {   
+        debugger     
+        if (result)
+        {
+          this.department = result;
+          this.pageTitle =  `Edit Department - ${this.department.Name} - ${this.department.Id}`;
+          this.errorMessage = ''; 
+        }
+        else 
+        {
+          alert(`Invalid Department ID - ${this.departmentId}, redirecting to department list`);
+          this.router.navigate(['/departments']);
+        }
       },
       error => {
         this.errorMessage = `Error - could not get employee details for employee Id ${this.departmentId}`;
         this.pageTitle =  '';
         console.log(this.errorMessage);
       }
-    );
+    ); 
   }
 
 }
