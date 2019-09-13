@@ -17,7 +17,7 @@ export class DepartmentEditComponent implements OnInit {
 
   constructor(private route : ActivatedRoute, private departmentService : DepartmentService,
     private router : Router) 
-  { 
+  {     
   }
 
   ngOnInit() 
@@ -28,17 +28,22 @@ export class DepartmentEditComponent implements OnInit {
     this.departmentService.getDepartmentById(this.departmentId).subscribe(    
 
       result => {   
-        debugger     
+             
         if (result)
         {
           this.department = result;
           this.pageTitle =  `Edit Department - ${this.department.Name} - ${this.department.Id}`;
           this.errorMessage = ''; 
         }
-        else 
+        else if (this.departmentId > 0 && !result)
         {
+          //debugger
           alert(`Invalid Department ID - ${this.departmentId}, redirecting to department list`);
           this.router.navigate(['/departments']);
+        }
+        else {
+          debugger
+          this.department = { Id : 0, Name : "", IsSuccessful : false, ErrorMessage : ''};
         }
       },
       error => {

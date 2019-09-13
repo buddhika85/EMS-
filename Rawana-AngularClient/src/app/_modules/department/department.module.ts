@@ -20,7 +20,7 @@ import { DepartmentDetailEditGuard } from 'src/app/_guards/department-detail-edi
         path : 'department/:id', 
         canActivate: [DepartmentDetailEditGuard],
         component: DepartmentEditComponent
-      }    
+      }        
     ]),
     SharedModule
   ]
