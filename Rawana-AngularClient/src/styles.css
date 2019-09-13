@@ -9,3 +9,22 @@
     padding-top: 1%; 
     padding-bottom: 1%; 
 }
+
+.formRequiredDiv 
+{
+    text-align: left; 
+    color: red; 
+    padding:0; 
+    max-width: 0;
+}
+
+.formButton {
+    width: 6.5vw;
+}
+
+
+
+/* from validation */
+.ng-invalid:not(form).ng-touched {
+    border: 1px solid red;
+}

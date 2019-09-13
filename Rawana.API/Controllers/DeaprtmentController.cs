@@ -2,6 +2,7 @@
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Rawana.Services.BusinessLogic.Department;
+using Rawana.ViewModels;
 
 namespace Rawana.API.Controllers
 {
@@ -40,6 +41,21 @@ namespace Rawana.API.Controllers
             {
                 var department = DepartmentBusinessLogic.GetByDepartmentById(id);
                 return Ok(department);
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+        }
+
+        [HttpPost]
+        [Route("SaveDepartment")]
+        public IHttpActionResult SaveDepartment(DepartmentViewModel departmentViewModel)
+        {
+            try
+            {
+                departmentViewModel = DepartmentBusinessLogic.SaveDepartment(departmentViewModel);
+                return Ok(departmentViewModel);
             }
             catch (Exception e)
             {

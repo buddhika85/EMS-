@@ -23,17 +23,17 @@
           Enter a department name
         </div>
     </div>
-    <div class="col-sm-1" style="text-align: left; color: red; padding:0; max-width: 0;">
+    <div class="col-sm-1" class="formRequiredDiv">
       *
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-1"></div>
     <div class="col-sm-1">
-      <button  class="form-control btn btn-primary">Save</button>
+      <button  class="form-control btn btn-primary formButton">Save</button>
     </div>
     <div class="col-sm-1">
-      <button class="form-control btn btn-dark">Reset</button>
+      <button type="reset" class="form-control btn btn-dark formButton" (click)="cancelChanges()">Cancel</button>
     </div>
   </div>
   <div class="form-group row">

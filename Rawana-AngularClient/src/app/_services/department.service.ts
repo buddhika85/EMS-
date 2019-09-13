@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IDepartment } from '../_models/IDepartment';
-import { Observable, throwError } from "rxjs";
+import { Observable, throwError, of } from "rxjs";
 import { tap, catchError } from "rxjs/operators";
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 
@@ -45,6 +45,14 @@ export class DepartmentService {
     );
   }
 
+  saveDepartment(department : IDepartment) : Observable<any>
+  {
+    // department.IsSuccessful = true;
+    // return of(department);
+
+    let queryString = this.departmentAPIUrl + '/SaveDepartment';
+    return this.http.post(queryString, department)
+  }
 
   private handleError(err: HttpErrorResponse) {
     // in a real world app, we may send the server to some remote logging infrastructure

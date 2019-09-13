@@ -23,6 +23,11 @@ export class DepartmentEditComponent implements OnInit {
 
   ngOnInit() 
   {    
+    this.setUpForm(); 
+  }
+
+  setUpForm() : void 
+  {
     this.departmentId = Number.parseInt(this.route.snapshot.paramMap.get('id'));
     this.errorMessage = '';
 
@@ -54,21 +59,46 @@ export class DepartmentEditComponent implements OnInit {
         this.pageTitle =  '';
         console.log(this.errorMessage);
       }
-    ); 
+    );
   }
-
 
   onFormSubmit(form : NgForm) : void
   {
-    debugger
+    //debugger
     if (form.valid)
     {
       this.errorMessage = ''; 
-      alert("save");
+      //debugger
+      this.departmentService.saveDepartment(this.department).subscribe(
+
+        result => 
+        {
+          if (result.IsSuccessful)
+          {
+            alert ("Success - Department saved");
+            this.router.navigate(['/departments']);
+          }
+          else
+          {
+            debugger
+            this.errorMessage = result.ErrorMessage;
+          }
+        },
+        error => 
+        {
+          debugger
+          this.errorMessage = "Error - Department was not saved"
+        }
+      );   
     }
     else 
     {
       console.log("Error - saving department");
     }
+  }
+
+  cancelChanges() : void
+  {    
+    this.setUpForm(); 
   }
 }

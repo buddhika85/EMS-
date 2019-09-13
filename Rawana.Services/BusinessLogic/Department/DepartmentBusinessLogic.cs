@@ -67,7 +67,60 @@ namespace Rawana.Services.BusinessLogic.Department
 
         public DepartmentViewModel SaveDepartment(DepartmentViewModel departmentViewModel)
         {
-            throw new NotImplementedException();
+            try
+            {
+                departmentViewModel = ValidateDepartment(departmentViewModel);
+                if (!departmentViewModel.IsSuccessful)
+                {
+                    return departmentViewModel;
+                }
+
+                var department = departmentViewModel.Id > 0
+                    ? Repository.GetByPrimaryKey(departmentViewModel.Id)
+                    : new DataAccess_EF.Department();
+
+                department.Name = departmentViewModel.Name.Trim();
+                if (department.Id <= 0)
+                {
+                    Repository.InsertAndSave(department);
+                }
+                else
+                {
+                    Repository.UpdateAndSave(department);
+                }
+
+                return departmentViewModel;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        private DepartmentViewModel ValidateDepartment(DepartmentViewModel departmentViewModel)
+        {
+            try
+            {
+                if (departmentViewModel == null)
+                {
+                    return new DepartmentViewModel {ErrorMessage = "Error - Department not saved"};
+                }
+
+                if (string.IsNullOrWhiteSpace(departmentViewModel.Name))
+                {
+                    departmentViewModel.ErrorMessage = "Error - Department name cannot be empty";
+                    return departmentViewModel;
+                }
+
+                departmentViewModel.ErrorMessage = string.Empty;
+                return departmentViewModel;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         private DepartmentViewModel ConvertToViewModel(DataAccess_EF.Department model)
