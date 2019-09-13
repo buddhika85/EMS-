@@ -45,13 +45,18 @@ export class DepartmentService {
     );
   }
 
-  saveDepartment(department : IDepartment) : Observable<any>
+  saveDepartment(department : IDepartment) : Observable<IDepartment>
   {
     // department.IsSuccessful = true;
     // return of(department);
 
     let queryString = this.departmentAPIUrl + '/SaveDepartment';
-    return this.http.post(queryString, department)
+    return this.http.post<IDepartment>(queryString, department).pipe(
+      tap(data => {
+        //console.log('Product: ' + JSON.stringify(data));
+      }),
+      catchError(this.handleError)
+    );
   }
 
   private handleError(err: HttpErrorResponse) {
