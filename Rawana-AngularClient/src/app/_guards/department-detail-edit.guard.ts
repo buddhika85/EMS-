@@ -11,11 +11,11 @@ export class DepartmentDetailEditGuard implements CanActivate
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree 
   {
-    debugger
+    //debugger
     let departmentId = Number.parseInt(next.url[1].path);
     if (isNaN(departmentId) || departmentId < 0)
     {     
-      debugger 
+      //debugger 
       alert(`Invalid Department with ID - ${departmentId}, redirecting to department list`);
       this.router.navigate(['/departments']);
       return false;

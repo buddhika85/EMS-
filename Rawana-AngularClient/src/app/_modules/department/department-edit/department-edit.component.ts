@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IDepartment } from 'src/app/_models/IDepartment';
 import { DepartmentService } from 'src/app/_services/department.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-department-edit',
@@ -42,8 +43,10 @@ export class DepartmentEditComponent implements OnInit {
           this.router.navigate(['/departments']);
         }
         else {
-          debugger
+          //debugger
           this.department = { Id : 0, Name : "", IsSuccessful : false, ErrorMessage : ''};
+          this.pageTitle =  `New Department`;
+          this.errorMessage = ''; 
         }
       },
       error => {
@@ -54,4 +57,18 @@ export class DepartmentEditComponent implements OnInit {
     ); 
   }
 
+
+  onFormSubmit(form : NgForm) : void
+  {
+    debugger
+    if (form.valid)
+    {
+      this.errorMessage = ''; 
+      alert("save");
+    }
+    else 
+    {
+      console.log("Error - saving department");
+    }
+  }
 }
