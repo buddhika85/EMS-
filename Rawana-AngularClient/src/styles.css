@@ -22,7 +22,26 @@
     width: 6.5vw;
 }
 
+.alignRight {
+    text-align: right;
+}
 
+.radioTopPadder {
+    padding-top: 0.4em;
+}
+
+.flexRowAlignment {
+    display: flex; 
+    flex-direction: row;
+}
+
+.redText {
+    color:red;
+}
+
+.selectOptionTestCenter {
+    text-align-last: center;
+}
 
 /* from validation */
 .ng-invalid:not(form).ng-touched {
