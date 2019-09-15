@@ -4,6 +4,10 @@
 
 <div class='spacerDiv-verticle'></div>
 
+<button class="btn btn-success" [routerLink]="['/employee', 0]">Add New Employee</button>
+
+<div class='spacerDiv-verticle'></div>
+
 <div class='row'>
   <label class='col-md-1'>Search By : </label>
   <input type='text' class='col-md-2 form-control' [(ngModel)]="searchEmployeeString"/>
@@ -41,7 +45,7 @@
         <td>{{employee.ManagerName}}</td>
         <td>{{employee.DepartmentName}}</td>
         <td>{{employee.IsActive | convertBooleanToString : null}}</td>
-        <td>{{employee.IsFullTime | convertBooleanToString : ['Full', 'Contact']}}</td>
+        <td>{{employee.IsFullTime | convertBooleanToString : ['Full', 'Contract']}}</td>
         <td>
           <button [routerLink]="['/employee', employee.Id]" class='btn'>
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button> 

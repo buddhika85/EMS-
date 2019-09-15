@@ -55,3 +55,4 @@ alter table Employee add constraint FK_Employee_Position foreign key (PositionId
 --insert into Employee values ('John', 'Desilva', DATEADD(DAY, 2, GETDATE()), 1, 0, 7000, 1, 2, 1, 3);
 
 select * from Employee;
+update Employee set IsPermenent = 0 where Id = 2;

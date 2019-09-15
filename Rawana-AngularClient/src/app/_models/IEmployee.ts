@@ -20,5 +20,5 @@ export interface IEmployee extends IBaseModel
     JobTitle : string;
     IsPermenentString : string;
     IsFullTimeString : string;
-    JoinedDateString : string;    
+    JoinedDateString : string;  
 }

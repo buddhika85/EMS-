@@ -1,5 +1,5 @@
 <h5>
-  Add / Edit Employee
+  {{pageTitle}}
 </h5>
 
 
@@ -11,7 +11,7 @@
   <div class="form-group row">
     <label for="Id" class="col-sm-2 col-form-label alignRight">Employee ID</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='Id' 
+      <input type="text" class="form-control" id='Id' [(ngModel)]="this.employee.Id"
         name='Id' readonly>
     </div>
   </div>
@@ -19,7 +19,7 @@
   <div class="form-group row">
     <label for="firstName" class="col-sm-2 col-form-label alignRight">First name</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='firstName' 
+      <input type="text" class="form-control" id='firstName' [(ngModel)]="this.employee.FirstName"
         name='firstName'>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
@@ -28,7 +28,7 @@
 
     <label for="lastName" class="col-sm-2 col-form-label alignRight">Last name</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='lastName' 
+      <input type="text" class="form-control" id='lastName' [(ngModel)]="this.employee.LastName"
         name='lastName'>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
@@ -39,7 +39,7 @@
   <div class="form-group row">
     <label for="joinedDate" class="col-sm-2 col-form-label alignRight">Joined Date</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='joinedDate' 
+      <input type="text" class="form-control" id='joinedDate' [(ngModel)]="this.employee.JoinedDateTime"
         name='joinedDate'>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
@@ -48,7 +48,7 @@
 
     <label for="salary" class="col-sm-2 col-form-label alignRight">Salary</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='salary' 
+      <input type="text" class="form-control" id='salary' [(ngModel)]="this.employee.Salary"
         name='salary'>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
@@ -60,9 +60,9 @@
     <label for="permenent" class="col-sm-2 col-form-label alignRight">Permenent</label>
     <div class="col-sm-3">
       <div class="row radioTopPadder">
-        <input type="radio" class="form-control col-sm-2" name='permenent' checked>
+        <input type="radio" class="form-control col-sm-2" name='permenent' [value]="this.employee.IsPermenent" [(ngModel)]="this.employee.IsPermenent">
         <span >Yes</span>
-        <input type="radio" class="form-control offset-sm-1 col-sm-2" name='permenent'>
+        <input type="radio" class="form-control offset-sm-1 col-sm-2" name='permenent' [value]="this.employee.IsPermenent">
         <span >No</span>
       </div>
      
@@ -85,7 +85,7 @@
         
         <div class="flexRowAlignment">
             <select class="form-control selectOptionTestCenter" id="departmentId" name="departmentId" style="width: 14em">
-                <option>---- select ----</option>
+                <option *ngFor="let department of departments" value='department.emplopyeeId'>{{department.Name}}</option>
               </select>
               <div class="formRequiredDiv" style="padding-left: 1em">
                   *
@@ -111,8 +111,8 @@
       <label for="managerId" class="col-sm-2 col-form-label alignRight">Manager</label>
       <div class="col-sm-3" >        
         <div class="flexRowAlignment">
-            <select class="form-control selectOptionTestCenter" id="departmentId" name="managerId" style="width: 14em">
-                <option>---- select ----</option>
+            <select class="form-control selectOptionTestCenter" id="managerId" name="managerId" style="width: 14em">
+                <option *ngFor="let manager of managers" value="manager.emplopyeeId">{{manager.FullName}}</option>
               </select>             
         </div>  
       </div>
@@ -132,7 +132,7 @@
 
   <div class="form-group row">
     <div class="col-sm-4 alignRight">
-      <label class="redText">Error</label>
+      <label class="redText">{{errorMessage}}</label>
     </div>
 
     <div class="offset-sm-3 col-sm-2 alignRight">

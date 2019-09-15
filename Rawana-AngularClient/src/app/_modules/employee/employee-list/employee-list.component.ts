@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IEmployee } from '../../../_models/IEmployee';
 import { EmployeeService } from '../../../_services/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -23,7 +24,7 @@ export class EmployeeListComponent implements OnInit {
     this.searchEmployees();
   }
 
-  constructor(private employeeService : EmployeeService)
+  constructor(private employeeService : EmployeeService, private router : Router)
   {     
   }
 
