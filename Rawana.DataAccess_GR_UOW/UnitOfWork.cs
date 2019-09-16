@@ -19,12 +19,15 @@ namespace Rawana.DataAccess_GR_UOW
 
         private GenericRepository<Employee> _employeeRepository;
         private GenericRepository<Department> _departmentRepository;
-       
+        private GenericRepository<Position> _positionRepository;
+
         public GenericRepository<Employee> EmployeeRepository =>
             _employeeRepository ?? (_employeeRepository = new GenericRepository<Employee>(Context));
 
         public GenericRepository<Department> DepartmentRepository =>
             _departmentRepository ?? (_departmentRepository = new GenericRepository<Department>(Context));
+        public GenericRepository<Position> PositionRepository =>
+            _positionRepository ?? (_positionRepository = new GenericRepository<Position>(Context));
 
         #endregion
 

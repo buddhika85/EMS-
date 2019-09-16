@@ -62,8 +62,7 @@ export class EmployeeEditComponent implements OnInit {
     );
 
     this.employeeService.searchEmployees('').subscribe(
-      result => {
-        debugger
+      result => {        
         this.managers = result;
         let first : IEmployee = { Id : 0, FirstName :'', LastName : '', FullName : '---- select ----', JoinedDateString : '', IsPermenent :false,
         IsFullTime :false, Salary: 0.0, IsActive: false, ManagerId : 0, DepartmentId: 0, PositionId:0, ManagerName: '', DepartmentName: '',
