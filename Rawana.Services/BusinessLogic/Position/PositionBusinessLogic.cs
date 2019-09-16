@@ -10,6 +10,11 @@ namespace Rawana.Services.BusinessLogic.Position
     {
         public GenericRepository<DataAccess_EF.Position> Repository { get; set; }
 
+        public PositionBusinessLogic()
+        {
+            Repository = UnitOfWork.PositionRepository;
+        }
+
         public List<PositionViewModel> SearchPositions(string searchString)
         {
             try

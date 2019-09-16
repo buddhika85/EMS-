@@ -17,6 +17,8 @@ namespace Rawana.API.Controllers
             PositionBusinessLogic = new PositionBusinessLogic();
         }
 
+        [HttpGet]
+        [Route("SearchPositions")]
         public IHttpActionResult SearchPositions(string searchString = null)
         {
             try

@@ -47,6 +47,8 @@
     <Compile Include="BusinessLogic\Department\IDepartmentBusinessLogic.cs" />
     <Compile Include="BusinessLogic\Employee\EmployeeBusinessLogic.cs" />
     <Compile Include="BusinessLogic\Employee\IEmployeeBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\Position\IPositionBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\Position\PositionBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
