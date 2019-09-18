@@ -8,7 +8,7 @@ import { EmployeeEditComponent } from '../employee/employee-edit/employee-edit.c
 
 import { EmployeeDetailEditGuard } from '../../_guards/employee-detail-edit.guard';
 import { ConvertBooleanToStringPipe } from '../../_pipes/convert-boolean-to-string.pipe';
-
+// import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { ConvertBooleanToStringPipe } from '../../_pipes/convert-boolean-to-stri
     EmployeeEditComponent,
     ConvertBooleanToStringPipe
   ],
-  imports: [     
+  imports: [         
       RouterModule.forChild([
         {path : 'employees', component: EmployeeListComponent},
         { 

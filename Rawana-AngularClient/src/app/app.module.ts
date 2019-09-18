@@ -7,6 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { EmployeeModule } from './_modules/employee/employee.module';
 import { DepartmentModule } from './_modules/department/department.module';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { DepartmentModule } from './_modules/department/department.module';
     WelcomeComponent
   ],
   imports: [
-    
+
+    BrowserAnimationsModule,     
+
     EmployeeModule,    
     DepartmentModule,
     RouterModule.forRoot([

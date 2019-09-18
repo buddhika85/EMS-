@@ -24,14 +24,14 @@ export class EmployeeEditComponent implements OnInit {
   managers : IEmployee[];
   positions : IPosition[];
 
+
   constructor(private route: ActivatedRoute, private employeeService : EmployeeService, private departmentService : DepartmentService, private positionService : PositionService) { }
 
   ngOnInit() 
   {
     this.emplopyeeId = Number.parseInt(this.route.snapshot.paramMap.get('id'));
     this.setUpEmployeeDetails();
-    this.setUpUI();
-    
+    this.setUpUI();   
   }
 
   setUpEmployeeDetails() : void

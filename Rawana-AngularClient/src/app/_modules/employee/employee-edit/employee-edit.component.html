@@ -39,8 +39,14 @@
   <div class="form-group row">
     <label for="joinedDate" class="col-sm-2 col-form-label alignRight">Joined Date</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='joinedDate' [(ngModel)]="employee.JoinedDateTime"
-        name='joinedDate'>
+      <!-- <input type="text" class="form-control" id='joinedDate' [(ngModel)]="employee.JoinedDateTime"
+        name='joinedDate'> -->
+        <mat-form-field color="accent">
+            <!-- [(ngModel)]="employee.JoinedDateTime"  -->
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [value]="employee.JoinedDateTime" [(ngModel)]="employee.JoinedDateTime" >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
       *
@@ -140,6 +146,7 @@
     </div>
 
     <div class="col-sm-2 ">
+        <!-- <button mat-flat-button>Cancel</button> -->
         <button class='btn btn-block formButton'>Cancel</button>
       </div>
   </div>

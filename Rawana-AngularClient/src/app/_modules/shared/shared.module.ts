@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -11,13 +12,15 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   exports: [
     CommonModule,
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ]
 })
 export class SharedModule { }
