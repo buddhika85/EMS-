@@ -116,7 +116,7 @@ namespace Rawana.Services.BusinessLogic.Employee
                     IsPermenent = model.IsPermenent,
                     JobTitle = model.Position.JobTitle,
                     JoinedDateTime = model.JoinedDateTime,
-                    ManagerId = model.ManagerId,
+                    ManagerId = model.ManagerId ?? 0,
                     ManagerName = model.Employee2 != null ? $"{model.Employee2.FirstName} {model.Employee2.LastName}" : string.Empty,
                     PositionId = model.PositionId,
                     Salary = model.Salary

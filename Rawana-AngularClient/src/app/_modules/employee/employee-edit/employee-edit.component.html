@@ -11,7 +11,7 @@
   <div class="form-group row">
     <label for="Id" class="col-sm-2 col-form-label alignRight">Employee ID</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='Id' [(ngModel)]="this.employee.Id"
+      <input type="text" class="form-control" id='Id' [(ngModel)]="employee.Id"
         name='Id' readonly>
     </div>
   </div>
@@ -19,7 +19,7 @@
   <div class="form-group row">
     <label for="firstName" class="col-sm-2 col-form-label alignRight">First name</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='firstName' [(ngModel)]="this.employee.FirstName"
+      <input type="text" class="form-control" id='firstName' [(ngModel)]="employee.FirstName"
         name='firstName'>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
@@ -28,7 +28,7 @@
 
     <label for="lastName" class="col-sm-2 col-form-label alignRight">Last name</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='lastName' [(ngModel)]="this.employee.LastName"
+      <input type="text" class="form-control" id='lastName' [(ngModel)]="employee.LastName"
         name='lastName'>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
@@ -39,7 +39,7 @@
   <div class="form-group row">
     <label for="joinedDate" class="col-sm-2 col-form-label alignRight">Joined Date</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='joinedDate' [(ngModel)]="this.employee.JoinedDateTime"
+      <input type="text" class="form-control" id='joinedDate' [(ngModel)]="employee.JoinedDateTime"
         name='joinedDate'>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
@@ -48,7 +48,7 @@
 
     <label for="salary" class="col-sm-2 col-form-label alignRight">Salary</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='salary' [(ngModel)]="this.employee.Salary"
+      <input type="text" class="form-control" id='salary' [(ngModel)]="employee.Salary"
         name='salary'>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
@@ -60,9 +60,9 @@
     <label for="permenent" class="col-sm-2 col-form-label alignRight">Permenent</label>
     <div class="col-sm-3">
       <div class="row radioTopPadder">
-        <input type="radio" class="form-control col-sm-2" name='permenent' [value]="this.employee.IsPermenent" [(ngModel)]="this.employee.IsPermenent">
+        <input type="radio" class="form-control col-sm-2" name='permenent' [value]="true" [(ngModel)]="employee.IsPermenent">
         <span >Yes</span>
-        <input type="radio" class="form-control offset-sm-1 col-sm-2" name='permenent' [value]="this.employee.IsPermenent">
+        <input type="radio" class="form-control offset-sm-1 col-sm-2" name='permenent' [value]="false" [(ngModel)]="employee.IsPermenent">
         <span >No</span>
       </div>
      
@@ -71,9 +71,9 @@
     <label for="fullTime" class="col-sm-2 col-form-label alignRight">Full Time</label>
     <div class="col-sm-3">
         <div class="row radioTopPadder">
-            <input type="radio" class="form-control col-sm-2" name='fullTime' checked>
+            <input type="radio" class="form-control col-sm-2" name='fullTime' [value]="true" [(ngModel)]="employee.IsFullTime"> 
             <span >Yes</span>
-            <input type="radio" class="form-control offset-sm-1 col-sm-2" name='fullTime'>
+            <input type="radio" class="form-control offset-sm-1 col-sm-2" name='fullTime' [value]="false" [(ngModel)]="employee.IsFullTime">
             <span >No</span>
           </div>
     </div>    
@@ -84,8 +84,8 @@
       <div class="col-sm-3" >
         
         <div class="flexRowAlignment">
-            <select class="form-control selectOptionTestCenter" id="departmentId" name="departmentId" style="width: 14em">
-                <option *ngFor="let department of departments" value='department.emplopyeeId'>{{department.Name}}</option>
+            <select class="form-control selectOptionTestCenter" id="departmentId" name="departmentId" style="width: 14em" [(ngModel)]="employee.DepartmentId">
+                <option *ngFor="let department of departments" [value]='department.Id'>{{department.Name}}</option>
               </select>
               <div class="formRequiredDiv" style="padding-left: 1em">
                   *
@@ -97,8 +97,8 @@
       <label for="position" class="col-sm-2 col-form-label alignRight">Position</label>
       <div class="col-sm-3">
           <div class="flexRowAlignment">
-              <select class="form-control selectOptionTestCenter" id="positionId" name="positionId" style="width: 14em">
-                  <option *ngFor="let position of positions" value="position.Id">{{position.JobTitle}}</option>
+              <select class="form-control selectOptionTestCenter" id="positionId" name="positionId" style="width: 14em" [(ngModel)]="employee.PositionId">
+                  <option *ngFor="let position of positions" [value]="position.Id">{{position.JobTitle}}</option>
                 </select>
                 <div class="formRequiredDiv" style="padding-left: 1em">
                     *
@@ -111,8 +111,8 @@
       <label for="managerId" class="col-sm-2 col-form-label alignRight">Manager</label>
       <div class="col-sm-3" >        
         <div class="flexRowAlignment">
-            <select class="form-control selectOptionTestCenter" id="managerId" name="managerId" style="width: 14em">
-                <option *ngFor="let manager of managers" value="manager.emplopyeeId">{{manager.FullName}}</option>
+            <select class="form-control selectOptionTestCenter" id="managerId" name="managerId" style="width: 14em" [(ngModel)]="employee.ManagerId">
+                <option *ngFor="let manager of managers" [value]="manager.Id">{{manager.FullName}}</option>
               </select>             
         </div>  
       </div>
@@ -120,9 +120,9 @@
       <label for="isActive" class="col-sm-2 col-form-label alignRight">Active</label>
       <div class="col-sm-3">
           <div class="row radioTopPadder">
-              <input type="radio" class="form-control col-sm-2" name='isActive' checked>
+              <input type="radio" class="form-control col-sm-2" name='isActive' [value]="true" [(ngModel)]="employee.IsActive">
               <span >Yes</span>
-              <input type="radio" class="form-control offset-sm-1 col-sm-2" name='isActive'>
+              <input type="radio" class="form-control offset-sm-1 col-sm-2" name='isActive' [value]="false" [(ngModel)]="employee.IsActive">
               <span >No</span>
             </div>
       </div>    
