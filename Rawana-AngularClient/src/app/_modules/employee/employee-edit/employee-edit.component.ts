@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { IEmployee } from '../../../_models/IEmployee';
 import { IDepartment } from 'src/app/_models/IDepartment';
 import { DepartmentService } from 'src/app/_services/department.service';
+import { PositionService } from 'src/app/_services/position.service';
+import { IPosition } from 'src/app/_models/IPosition';
 
 @Component({
   selector: 'app-employee-edit',
@@ -20,13 +22,20 @@ export class EmployeeEditComponent implements OnInit {
   errorMessage : string;
   departments : IDepartment[];
   managers : IEmployee[];
+  positions : IPosition[];
 
-  constructor(private route: ActivatedRoute, private employeeService : EmployeeService, private departmentService : DepartmentService) { }
+  constructor(private route: ActivatedRoute, private employeeService : EmployeeService, private departmentService : DepartmentService, private positionService : PositionService) { }
 
   ngOnInit() 
   {
     this.emplopyeeId = Number.parseInt(this.route.snapshot.paramMap.get('id'));
-    //debugger
+    this.setUpEmployeeDetails();
+    this.setUpUI();
+    
+  }
+
+  setUpEmployeeDetails() : void
+  {
     if (this.emplopyeeId != null && this.emplopyeeId == 0)
     {
         this.pageTitle =  'Add New Employee';
@@ -48,7 +57,18 @@ export class EmployeeEditComponent implements OnInit {
         }
       );
     }
+  }
 
+  setUpUI() : void
+  {   
+    this.setUpDepartmentsSelect();
+    this.setUpManagersSelect();
+    this.setUpPositionsSelect();
+  }
+
+
+  setUpDepartmentsSelect() : void
+  {
     this.departmentService.searchDepartments('').subscribe(
       result => {
         this.departments = result;
@@ -60,7 +80,11 @@ export class EmployeeEditComponent implements OnInit {
         this.errorMessage = <any>error;
       }
     );
+  }
 
+  
+  setUpManagersSelect() : void
+  {
     this.employeeService.searchEmployees('').subscribe(
       result => {        
         this.managers = result;
@@ -76,4 +100,20 @@ export class EmployeeEditComponent implements OnInit {
     );
   }
 
+
+  setUpPositionsSelect() : void
+  {
+    this.positionService.searchPositions('').subscribe(
+      result => {
+        this.positions = result;
+        let first : IPosition = { Id : 0, JobTitle : "---- select ----", Description: '', IsSuccessful : false, ErrorMessage : ''};
+        this.positions.unshift(first);
+      },
+      error => {
+        alert("Error - In getting all positions");
+        this.errorMessage = <any>error;
+      }
+    );
+  }
+  
 }

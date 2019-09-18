@@ -98,7 +98,7 @@
       <div class="col-sm-3">
           <div class="flexRowAlignment">
               <select class="form-control selectOptionTestCenter" id="positionId" name="positionId" style="width: 14em">
-                  <option>---- select ----</option>
+                  <option *ngFor="let position of positions" value="position.Id">{{position.JobTitle}}</option>
                 </select>
                 <div class="formRequiredDiv" style="padding-left: 1em">
                     *
