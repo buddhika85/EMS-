@@ -19,8 +19,11 @@
   <div class="form-group row">
     <label for="firstName" class="col-sm-2 col-form-label alignRight">First name</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id='firstName' [(ngModel)]="employee.FirstName"
-        name='firstName'>
+      <!-- <input type="text" class="form-control" id='firstName' [(ngModel)]="employee.FirstName"
+        name='firstName'> -->
+        <mat-form-field>
+            <input matInput [value]="employee.FirstName" id='firstName' name='firstName' [(ngModel)]="employee.FirstName">
+        </mat-form-field>
     </div>
     <div class="col-sm-1" class="formRequiredDiv">
       *
@@ -41,9 +44,9 @@
     <div class="col-sm-3">
       <!-- <input type="text" class="form-control" id='joinedDate' [(ngModel)]="employee.JoinedDateTime"
         name='joinedDate'> -->
-        <mat-form-field color="accent">
+        <mat-form-field>
             <!-- [(ngModel)]="employee.JoinedDateTime"  -->
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [value]="employee.JoinedDateTime" [(ngModel)]="employee.JoinedDateTime" >
+          <input matInput [matDatepicker]="picker" id='joinedDate' name='joinedDate' [value]="employee.JoinedDateTime" [(ngModel)]="employee.JoinedDateTime" >
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
